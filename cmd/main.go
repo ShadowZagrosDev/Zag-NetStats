@@ -245,7 +245,7 @@ func main() {
 		flag.Usage()
 		fmt.Print("\n")
 		log.Fatal("Error: the -i (interface) flag is required.\n" +
-			"Usage: ./network-stats -i <interface_name> -t <interval> -p <precision> -f <format>")
+			"Usage: ./zag-netStats -i <interface_name> -t <interval> -p <precision> -f <format>")
 	}
 
 	if *precision < 0 || *precision > 6 {
