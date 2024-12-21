@@ -14,7 +14,7 @@ import (
 	"time"
 
 	"github.com/olekukonko/tablewriter"
-	"github.com/shirou/gopsutil/v3/net"
+	"github.com/shirou/gopsutil/v4/net"
 )
 
 // Constants for unit conversions using binary (1024-based) prefixes
