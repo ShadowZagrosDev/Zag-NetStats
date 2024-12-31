@@ -17,7 +17,6 @@
 </div>
 <br>
 
----
 
 ## Features
 
@@ -28,8 +27,6 @@
   - Tabular format for a clear and human-readable display.
 - **Cross-Platform Support**: Works on Linux, macOS, and Windows.
 - **Configurable Precision and Refresh Interval**: Fine-tune precision and update frequency as needed.
-
----
 
 ## Installation
 
@@ -60,7 +57,6 @@
    ./zag-netStats -i <interface_name>
    ```
 
----
 
 ## Usage
 
@@ -81,7 +77,6 @@ Monitor a network interface (`eth0`) with a refresh interval of 2 seconds and JS
 ./zag-netStats -i eth0 -t 2 -f json
 ```
 
----
 
 ## Sample Output
 
@@ -108,7 +103,6 @@ Monitor a network interface (`eth0`) with a refresh interval of 2 seconds and JS
 }
 ```
 
----
 
 ## How It Works
 
@@ -118,43 +112,19 @@ Monitor a network interface (`eth0`) with a refresh interval of 2 seconds and JS
    - Computes total data sent and received since the start of monitoring.
 3. **Output Rendering**: Formats the data as a table or JSON for display.
 
----
-
-## Contributing
-
-Contributions are welcome! To contribute:
-
-1. Fork the repository.
-2. Create a feature branch.
-3. Commit your changes.
-4. Submit a pull request.
-
-Please ensure your changes are well-documented and tested.
-
----
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
----
 
 ## Acknowledgments
 
 - [gopsutil](https://github.com/shirou/gopsutil) for providing cross-platform system utilities.
 - [tablewriter](https://github.com/olekukonko/tablewriter) for rendering tabular output.
 
----
-
-## Issues
-
-For issues and feature requests, please use the [GitHub Issues](https://github.com/ShadowZagrosDev/Zag-NetStats/issues) section.
 
 ---
 
-## Author
-
-**ShadowZagrosDev**
-
-Feel free to connect via GitHub for any questions or feedback.
+**Made with ❤️ by ShadowZagrosDev**
 
