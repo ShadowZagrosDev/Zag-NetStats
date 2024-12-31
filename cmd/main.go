@@ -19,9 +19,10 @@ import (
 
 // Constants for unit conversions using binary (1024-based) prefixes
 const (
-	KB = 1024.0
-	MB = KB * 1024
-	GB = MB * 1024
+	KB                   = 1024.0
+	MB                   = KB * 1024
+	GB                   = MB * 1024
+	unrealBytesPerSecond = GB * 100
 )
 
 // NetStats represents comprehensive network statistics for a specific network interface.
@@ -199,8 +200,15 @@ func (nm *NetworkMonitor) collectStats() error {
 				continue
 			}
 
-			sentBytes := currentNetIO.BytesSent - prevNetIO.BytesSent
-			recvBytes := currentNetIO.BytesRecv - prevNetIO.BytesRecv
+			tmpSentBytes := currentNetIO.BytesSent - prevNetIO.BytesSent
+			tmpRecvBytes := currentNetIO.BytesRecv - prevNetIO.BytesRecv
+
+			if tmpSentBytes > unrealBytesPerSecond || tmpRecvBytes > unrealBytesPerSecond {
+				return fmt.Errorf("unrealistic network usage detected, exiting")
+			}
+
+			sentBytes := tmpSentBytes
+			recvBytes := tmpRecvBytes
 
 			totalSent := currentNetIO.BytesSent - totalSentStart
 			totalRecv := currentNetIO.BytesRecv - totalRecvStart
